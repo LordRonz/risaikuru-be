@@ -14,7 +14,8 @@
     "start:ts": "ts-node ./src/server.ts",
     "lint": "eslint ./src --ext .ts",
     "format": "prettier -w .",
-    "format:check": "prettier -c ."
+    "format:check": "prettier -c .",
+    "tsc": "tsc --pretty --noEmit --incremental false"
   },
   "dependencies": {
     "@teachablemachine/image": "^0.8.5",
