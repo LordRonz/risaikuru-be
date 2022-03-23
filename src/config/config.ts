@@ -3,4 +3,4 @@ import { join as pathJoin } from 'path';
 
 config({ path: pathJoin(__dirname, '../../.env') });
 
-export const PORT = process.env.PORT ? +process.env.PORT : 3000;
+export const PORT = process.env.PORT ? +process.env.PORT : 3001;

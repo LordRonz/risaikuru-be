@@ -7,7 +7,10 @@
     "build": "tsc",
     "test": "jest --silent",
     "dev": "nodemon ./src/server.ts",
-    "start": "node ./dist/server.js",
+    "start:node": "node ./dist/server.js",
+    "start": "pm2 start ecosystem.config.json --no-daemon",
+    "start:daemon": "pm2 start ecosystem.config.json",
+    "pm2": "pm2",
     "start:ts": "ts-node ./src/server.ts",
     "lint": "eslint ./src --ext .ts",
     "format": "prettier -w .",
@@ -15,7 +18,6 @@
   },
   "dependencies": {
     "@teachablemachine/image": "^0.8.5",
-    "@tensorflow-models/mobilenet": "^2.1.0",
     "@tensorflow/tfjs": "^3.14.0",
     "@tensorflow/tfjs-node": "^3.14.0",
     "canvas": "^2.9.1",
@@ -24,7 +26,8 @@
     "express": "^4.17.3",
     "express-fileupload": "^1.3.1",
     "jsdom": "^19.0.0",
-    "node-fetch": "2.6.7"
+    "node-fetch": "2.6.7",
+    "pm2": "^5.2.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
