@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "risaikuru",
-      "script": "dist/index.js",
+      "script": "dist/server.js",
       "instances": 0,
       "autorestart": true,
       "watch": false,
