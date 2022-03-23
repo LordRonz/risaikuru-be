@@ -14,7 +14,7 @@ export const loadModel = async () => {
 };
 
 export const predict = async (
-  imageData: string,
+  imageData: string | Buffer,
   contentType: string,
   responseFunction: (
     output: {
@@ -25,6 +25,9 @@ export const predict = async (
 ) => {
   if (!model) {
     model = await loadModel();
+  }
+  if (typeof imageData !== 'string') {
+    imageData = imageData.toString('base64');
   }
   getPrediction(model, imageData, contentType, responseFunction);
 };
@@ -47,7 +50,9 @@ export const getPrediction = async (
   canvasImage.onload = async () => {
     canvasContext.drawImage(canvasImage, 0, 0, 64, 64);
 
-    const prediction = await model.predict(imageCanvas as unknown as tmImage.ClassifierInputSource);
+    const prediction = await model.predict(
+      imageCanvas as unknown as tmImage.ClassifierInputSource
+    );
     console.log(prediction);
     responseFunction(prediction);
   };
