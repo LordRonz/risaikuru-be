@@ -1,6 +1,6 @@
 import { predict } from '../config/tensorflow';
 
-export interface IImageFile {
+export type IImageFile = {
   data: Buffer;
   mimetype: string;
 }
