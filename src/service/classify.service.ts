@@ -3,7 +3,7 @@ import { predict } from '../config/tensorflow';
 export type IImageFile = {
   data: Buffer;
   mimetype: string;
-}
+};
 
 const SUPPORTED_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/gif'];
 
