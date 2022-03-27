@@ -9,4 +9,10 @@ app.use(cors());
 
 app.use('/', routes);
 
+app.use((req, res) => {
+  res.status(404).send({
+    message: 'Not Found',
+  });
+});
+
 export default app;

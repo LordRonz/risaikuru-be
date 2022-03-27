@@ -10,7 +10,7 @@ const classifyImageBuffer = async (req: Request, res: Response) => {
     await classifyImageFile(imageObject, (output) => res.json(output));
   } catch (error) {
     if (error instanceof Error) {
-      res.json({ message: error.message });
+      res.status(500).json({ message: error.message });
     }
   }
 };
