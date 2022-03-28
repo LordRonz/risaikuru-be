@@ -1,4 +1,4 @@
-FROM node:alpine as builder
+FROM node:latest as builder
 
 RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app
 
@@ -15,7 +15,7 @@ COPY --chown=node:node . .
 RUN yarn build
 
 
-FROM node:alpine as server
+FROM node:latest as server
 
 RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app
 
