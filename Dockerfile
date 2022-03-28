@@ -30,5 +30,3 @@ RUN yarn install --pure-lockfile --prod
 COPY --chown=node:node --from=builder /usr/src/node-app/dist ./dist
 
 EXPOSE 3001
-
-CMD [ "yarn", "start:node" ]

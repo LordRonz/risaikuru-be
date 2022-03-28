@@ -17,7 +17,7 @@
     "format:check": "prettier -c .",
     "tsc": "tsc --pretty --noEmit --incremental false",
     "prepare": "husky install",
-    "docker:prod": "docker-compose -f docker-compose.yml up"
+    "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up"
   },
   "dependencies": {
     "@teachablemachine/image": "^0.8.5",
