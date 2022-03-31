@@ -7,6 +7,7 @@ const classifyImageBuffer = async (req: Request, res: Response) => {
     const { body } = req;
     const data = Buffer.from(body.buffer as string, 'base64');
     const imageObject = { data, mimetype: body.mimetype as string };
+    console.log(data);
     await classifyImageFile(imageObject, (output) => res.json(output));
   } catch (error) {
     if (error instanceof Error) {
